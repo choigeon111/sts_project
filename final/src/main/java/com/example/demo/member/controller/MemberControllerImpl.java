@@ -17,7 +17,6 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/member")
 public class MemberControllerImpl implements MemberController{
-	// /뺴기
 	@Autowired
 	MemberService service;
 	
