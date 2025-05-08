@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>회원 목록</title>
+		<link rel="stylesheet" href="/css/main.css">
+	</head>
+	<body>
+		<div th:insert="~{fragments/header :: header}"></div>
+		<div th:insert="~{fragments/sidebar :: sidebar}"></div>
+		<div layout:fragment="content" id="content">
+		<h1 align="center">회원 목록</h1>
+		<table align="center" border="1" width="700">
+			<tr>
+				<th bgcolor="orange" width="10%">아이디</th>
+				<th bgcolor="orange" width="10%">암호</th>
+				<th bgcolor="orange" width="10%">이름</th>
+				<th bgcolor="orange" width="10%">이메일</th>
+				<th bgcolor="orange" width="10%">가입일자</th>
+				<th bgcolor="orange" width="10%">삭제</th>
+			</tr>
+			<tr th:if="${#lists.isEmpty(memberList)}">
+				<td colspan="6">
+					<h3 align="center">가입된 회원정보가 없습니다.</h3>
+				</td>
+			</tr>
+			<tr th:each="member:${memberList}">
+				<td align="center">
+					<a th:href="@{/member/detailMember(id=${member.id})}"
+						th:text="${member.id}"></a>
+				</td>
+				<td th:text="${member.pwd}" align="center"></td>
+				<td th:text="${member.name}" align="center"></td>
+				<td th:text="${member.email}" align="center"></td>
+				<td th:text="${member.joinDate}" align="center"></td>
+				<td align="center">
+					<a th:href="@{/member/deleteMember(id=${member.id})}">삭제</a>
+				</td>
+			</tr>
+		</table>
+		<div align="center">
+			<a href="/member/joinMemberForm">회원가입</a>
+		</div>
+		</div>
+		<div th:insert="~{fragments/footer :: footer}"></div>
+	</body>
+</html>

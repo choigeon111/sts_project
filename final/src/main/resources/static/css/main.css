@@ -1,0 +1,56 @@
+body {
+	margin : 0 auto;
+}
+#header {
+	padding: 10px;
+	height: 120px;
+	text-align: center;
+	background-color: cornsilk;
+}
+#header > div {
+	float: right;
+	margin-right: 30px;
+}
+#header > div > a {
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	background-color: burlywood;
+	padding: 5px;
+	width: 100px;
+}
+#header > div > a:hover {
+	background-color: chocolate;
+}
+#sidebar {
+	clear: both;
+	position: absolute;
+	top: 140px;
+	height: 84.3%;
+	width: 150px;
+	padding-top: 10px;
+	background-color: burlywood;
+}
+#sidebar > ul {
+	position: absolute;
+	left: -10px;
+	list-style: none;
+}
+#sidebar > ul > li {
+	text-align: center;
+	padding: 10px;
+}
+#sidebar > ul > li > a {
+	text-decoration: none;
+	color: black;
+}
+#sidebar > ul > li:hover {
+	background-color: chocolate;
+}
+#footer {
+	position: absolute;
+	background-color: cornsilk;
+	width: 100%;
+	bottom: 0px;
+	text-align: center;
+}
