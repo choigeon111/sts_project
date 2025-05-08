@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>로그인</title>
+		<script>
+			window.onload = function(){
+	            let message = "[[${param.message}]]";
+	            if(message){
+	               alert(message);
+	            }
+	         }
+		</script>
+		<link rel="stylesheet" href="/css/main.css">
+	</head>
+	<body>
+		<div th:insert="~{fragments/header :: header}"></div>
+		<div th:insert="~{fragments/sidebar :: sidebar}"></div>
+		<div layout:fragment="content" id="content">
+		<h1 align="center">로그인</h1>
+		<form method="post" action="/member/login">
+			<table border="1" align="center" width="500">
+				<tr>
+					<th bgcolor="orange" align="center" width="30%">아이디</th>
+					<th><input type="text" name="id" size="30"></th>
+				</tr>
+				<tr>
+					<th bgcolor="orange" align="center" width="30%">암호</th>
+					<th><input type="password" name="pwd" size="30"></th>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="로그인">
+						<input type="reset" value="다시입력">
+					</td>
+				</tr>
+			</table>
+		</form>
+		</div>
+		<div th:insert="~{fragments/footer :: footer}"></div>
+	</body>
+</html>
