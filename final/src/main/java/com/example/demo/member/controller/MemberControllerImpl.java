@@ -17,6 +17,7 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/member")
 public class MemberControllerImpl implements MemberController{
+	// /뺴기
 	@Autowired
 	MemberService service;
 	
@@ -31,7 +32,7 @@ public class MemberControllerImpl implements MemberController{
 	@Override
 	@GetMapping("/{formName:.*Form}")
 	public String joinMemberForm(String formName) {
-		return "member/" + formName;
+		return "member/" + formName; 
 	}
 
 	@Override
