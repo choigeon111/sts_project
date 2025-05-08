@@ -89,7 +89,6 @@ public class MemberControllerImpl implements MemberController{
 		if(result) {
 			session.setAttribute("loginId", id);
 			model.addAttribute("message", id+"님 환영합니다. 로그인에 성공했습니다.");
-			model.addAttribute("redirectUrl", "/");
 		} else {
 			model.addAttribute("message", "아이디나 암호가 잘못 되었습니다. 다시 로그인 하세요.");
 			model.addAttribute("redirectUrl", "/member/loginForm");
