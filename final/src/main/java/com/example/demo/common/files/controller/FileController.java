@@ -35,6 +35,7 @@ public class FileController {
 		Resource resource = new UrlResource(filePath.toUri());
 		
 		// 한글 파일도 처리 가능
+		//
 		String encodedFileName = UriUtils.encode(resource.getFilename(),
 				StandardCharsets.UTF_8);
 		String contentDisposition = "attachment;filename=\""+encodedFileName +
